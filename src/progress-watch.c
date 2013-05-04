@@ -193,13 +193,13 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent *t) {
   (void)ctx;
 
   //Year
-  static char date_year[] = "Year (0000)";
-  string_format_time(date_year, sizeof(date_year), "Year (%Y)", t->tick_time);
+  static char date_year[] = "0000";
+  string_format_time(date_year, sizeof(date_year), "%Y", t->tick_time);
   text_layer_set_text(&year_layer, date_year);
 
   //Month
-  static char date_month[] = "Month (Xxxxxxxxxxx)";
-  string_format_time(date_month, sizeof(date_month), "Month (%B)", t->tick_time);
+  static char date_month[] = "Xxxxxxxxxxx";
+  string_format_time(date_month, sizeof(date_month), "%B", t->tick_time);
   text_layer_set_text(&month_layer, date_month);
 
   //Week
@@ -223,14 +223,14 @@ void handle_minute_tick(AppContextRef ctx, PebbleTickEvent *t) {
 
   // text_layer_set_text(&week_layer, date_week);
 
-  static char date_week[] = "Week (Xxxxxxxxx)";
-  string_format_time(date_week, sizeof(date_week), "Week (%A)", t->tick_time);
+  static char date_week[] = "Xxxxxxxxx";
+  string_format_time(date_week, sizeof(date_week), "%A", t->tick_time);
   text_layer_set_text(&week_layer, date_week);
 
 
   //Day
-  static char date_day[] = "Day (00)";
-  string_format_time(date_day, sizeof(date_day), "Day (%d)", t->tick_time);
+  static char date_day[] = "00";
+  string_format_time(date_day, sizeof(date_day), "%d", t->tick_time);
   text_layer_set_text(&day_layer, date_day);
 
 
